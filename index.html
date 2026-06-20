@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bùi Minh Thắng — Full-Stack Developer</title>
+  <meta name="description" content="Portfolio of Bùi Minh Thắng — a passionate Full-Stack Developer specializing in ASP.NET Core, React, Flutter, and IoT systems. Building scalable products with modern architecture.">
+  <meta name="keywords" content="Bùi Minh Thắng, Full-Stack Developer, ASP.NET Core, React, Flutter, IoT, Portfolio">
+  <meta property="og:title" content="Bùi Minh Thắng — Full-Stack Developer">
+  <meta property="og:description" content="A passionate Full-Stack Developer specializing in ASP.NET Core, React, Flutter, and IoT systems.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <!-- ===== CONSTELLATION PARTICLE CANVAS ===== -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- ===== CUSTOM CURSOR ===== -->
+  <div class="cursor-dot" id="cursor-dot"></div>
+  <div class="cursor-ring" id="cursor-ring"></div>
+
+  <!-- ===== NAVIGATION ===== -->
+  <nav class="nav" id="nav">
+    <div class="nav__inner">
+      <a href="#hero" class="nav__logo">
+        <span class="nav__logo-bracket">&lt;</span>Thắng<span class="nav__logo-bracket">/&gt;</span>
+      </a>
+      <div class="nav__links" id="nav-links">
+        <a href="#about" class="nav__link" data-index="01">About</a>
+        <a href="#skills" class="nav__link" data-index="02">Skills</a>
+        <a href="#experience" class="nav__link" data-index="03">Experience</a>
+        <a href="#projects" class="nav__link" data-index="04">Projects</a>
+        <a href="#contact" class="nav__link" data-index="05">Contact</a>
+      </div>
+      <div class="nav__actions">
+        <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" class="nav__resume-btn">
+          <i class="fa-brands fa-github"></i> GitHub
+        </a>
+        <button class="nav__theme-toggle" id="theme-toggle" aria-label="Toggle theme">
+          <i class="fa-solid fa-moon"></i>
+        </button>
+        <button class="nav__hamburger" id="hamburger" aria-label="Toggle menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- ===== FIXED LEFT SIDEBAR — SOCIAL DOCK ===== -->
+  <aside class="sidebar sidebar--left">
+    <ul class="sidebar__social-dock">
+      <li><a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" aria-label="GitHub" data-tooltip="GitHub"><i class="fa-brands fa-github"></i></a></li>
+      <li><a href="https://linkedin.com" target="_blank" rel="noopener" aria-label="LinkedIn" data-tooltip="LinkedIn"><i class="fa-brands fa-linkedin-in"></i></a></li>
+      <li><a href="https://facebook.com" target="_blank" rel="noopener" aria-label="Facebook" data-tooltip="Facebook"><i class="fa-brands fa-facebook-f"></i></a></li>
+    </ul>
+    <div class="sidebar__line"></div>
+  </aside>
+
+  <!-- ===== FIXED RIGHT SIDEBAR — EMAIL ===== -->
+  <aside class="sidebar sidebar--right">
+    <a href="mailto:buiminhthang.dev@gmail.com" class="sidebar__email">buiminhthang.dev@gmail.com</a>
+    <div class="sidebar__line"></div>
+  </aside>
+
+  <!-- ===== MAIN CONTENT ===== -->
+  <main>
+
+    <!-- ———— HERO ———— -->
+    <section class="hero" id="hero">
+      <div class="hero__content">
+        <p class="hero__greeting reveal">
+          <span class="hero__greeting-wave">👋</span> Hi there, my name is
+        </p>
+        <h1 class="hero__name reveal">Bùi Minh Thắng<span class="hero__dot">.</span></h1>
+        <div class="hero__code-editor reveal">
+          <div class="hero__code-bar">
+            <span class="hero__code-dot hero__code-dot--red"></span>
+            <span class="hero__code-dot hero__code-dot--yellow"></span>
+            <span class="hero__code-dot hero__code-dot--green"></span>
+            <span class="hero__code-filename">~/about-me.js</span>
+          </div>
+          <div class="hero__code-body">
+            <span class="hero__code-line"><span class="code-keyword">const</span> <span class="code-variable">role</span> = <span class="code-string">"<span id="typewriter"></span><span class="typewriter-cursor">|</span>"</span>;</span>
+            <span class="hero__code-line"><span class="code-keyword">const</span> <span class="code-variable">passion</span> = [<span class="code-string">"clean code"</span>, <span class="code-string">"IoT"</span>, <span class="code-string">"AI"</span>];</span>
+            <span class="hero__code-line"><span class="code-keyword">const</span> <span class="code-variable">status</span> = <span class="code-string">"Building something amazing 🚀"</span>;</span>
+          </div>
+        </div>
+        <p class="hero__description reveal">
+          I'm a <strong>Full-Stack Developer</strong> who loves crafting scalable platforms with modern architecture. From IoT-powered plant care to competition management — I bring ideas to life with code.
+        </p>
+        <div class="hero__cta reveal">
+          <a href="#projects" class="btn btn--primary">
+            <i class="fa-solid fa-rocket"></i> View My Work
+          </a>
+          <a href="#contact" class="btn btn--outline">
+            <i class="fa-solid fa-paper-plane"></i> Get In Touch
+          </a>
+        </div>
+      </div>
+      <div class="hero__scroll-indicator">
+        <div class="hero__mouse">
+          <div class="hero__mouse-wheel"></div>
+        </div>
+        <span>Scroll Down</span>
+      </div>
+    </section>
+
+    <!-- ———— ABOUT ———— -->
+    <section class="section about" id="about">
+      <h2 class="section__heading reveal">
+        <span class="section__number">01.</span> About Me
+      </h2>
+      <div class="about__grid">
+        <div class="about__text reveal">
+          <p>
+            Hi! I'm <strong>Thắng</strong>, a passionate software developer and student at 
+            <a href="https://fpt.edu.vn" target="_blank" rel="noopener" class="highlight-link">FPT University</a>. 
+            I fell in love with programming and have been building things for the web & beyond ever since.
+          </p>
+          <p>
+            My main focus is on <strong>Full-Stack Development</strong> — from designing clean REST APIs with 
+            <strong>ASP.NET Core</strong> to creating responsive UIs with <strong>React</strong> and cross-platform 
+            mobile apps with <strong>Flutter</strong>. I also have a deep interest in <strong>IoT systems</strong> and 
+            <strong>AI integration</strong>.
+          </p>
+          <p>
+            Beyond coding, I enjoy exploring new technologies, leading development teams, and contributing to open-source projects. Currently focused on building production-grade systems with clean architecture and distributed patterns.
+          </p>
+          <div class="about__tech-list">
+            <p>Technologies I've been working with recently:</p>
+            <ul>
+              <li>C# / ASP.NET Core</li>
+              <li>TypeScript / JavaScript</li>
+              <li>React.js / Next.js</li>
+              <li>Flutter / Dart</li>
+              <li>Node.js / Express</li>
+              <li>PostgreSQL / Redis</li>
+              <li>Docker / .NET Aspire</li>
+              <li>MQTT / IoT</li>
+            </ul>
+          </div>
+        </div>
+        <div class="about__image-wrapper reveal">
+          <div class="about__image-frame">
+            <img src="https://avatars.githubusercontent.com/u/167419186?v=4" alt="Bùi Minh Thắng" class="about__image" loading="lazy">
+            <div class="about__image-overlay"></div>
+          </div>
+          <blockquote class="about__quote">
+            <p><em>"The best way to predict the future is to create it."</em></p>
+            <cite>— Thắng</cite>
+          </blockquote>
+        </div>
+      </div>
+    </section>
+
+    <!-- ———— SKILLS ———— -->
+    <section class="section skills" id="skills">
+      <h2 class="section__heading reveal">
+        <span class="section__number">02.</span> What I Do
+      </h2>
+      <div class="skills__categories">
+        <!-- Backend -->
+        <div class="skill-card reveal" data-tilt>
+          <div class="skill-card__icon-ring">
+            <i class="fa-solid fa-server"></i>
+          </div>
+          <h3 class="skill-card__title">Backend Development</h3>
+          <p class="skill-card__desc">Building robust APIs and services with clean architecture, CQRS, and event-driven patterns.</p>
+          <div class="skill-card__tags">
+            <span>C#</span><span>ASP.NET Core</span><span>Node.js</span><span>Python</span><span>MediatR</span><span>EF Core</span>
+          </div>
+        </div>
+        <!-- Frontend -->
+        <div class="skill-card reveal" data-tilt>
+          <div class="skill-card__icon-ring">
+            <i class="fa-solid fa-palette"></i>
+          </div>
+          <h3 class="skill-card__title">Frontend Development</h3>
+          <p class="skill-card__desc">Crafting responsive, interactive UIs with modern frameworks and design systems.</p>
+          <div class="skill-card__tags">
+            <span>React.js</span><span>TypeScript</span><span>Tailwind CSS</span><span>Vite</span><span>Redux</span><span>TanStack</span>
+          </div>
+        </div>
+        <!-- Mobile -->
+        <div class="skill-card reveal" data-tilt>
+          <div class="skill-card__icon-ring">
+            <i class="fa-solid fa-mobile-screen-button"></i>
+          </div>
+          <h3 class="skill-card__title">Mobile Development</h3>
+          <p class="skill-card__desc">Building cross-platform mobile experiences with beautiful UI and smooth performance.</p>
+          <div class="skill-card__tags">
+            <span>Flutter</span><span>Dart</span><span>Riverpod</span><span>go_router</span><span>Dio</span><span>Freezed</span>
+          </div>
+        </div>
+        <!-- DevOps & IoT -->
+        <div class="skill-card reveal" data-tilt>
+          <div class="skill-card__icon-ring">
+            <i class="fa-solid fa-cloud"></i>
+          </div>
+          <h3 class="skill-card__title">DevOps & IoT</h3>
+          <p class="skill-card__desc">Deploying scalable systems with containers, orchestrators, and real-time IoT data pipelines.</p>
+          <div class="skill-card__tags">
+            <span>Docker</span><span>.NET Aspire</span><span>PostgreSQL</span><span>Redis</span><span>MQTT</span><span>AWS / Azure</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tech orbit -->
+      <div class="skills__orbit-container reveal">
+        <div class="skills__orbit">
+          <div class="orbit-ring orbit-ring--1">
+            <div class="orbit-icon" style="--i:0; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/csharp/csharp-original.svg" alt="C#"></div>
+            <div class="orbit-icon" style="--i:1; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/dotnetcore/dotnetcore-original.svg" alt=".NET"></div>
+            <div class="orbit-icon" style="--i:2; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/react/react-original.svg" alt="React"></div>
+            <div class="orbit-icon" style="--i:3; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/flutter/flutter-original.svg" alt="Flutter"></div>
+            <div class="orbit-icon" style="--i:4; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/typescript/typescript-original.svg" alt="TypeScript"></div>
+            <div class="orbit-icon" style="--i:5; --total:6"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" alt="JavaScript"></div>
+          </div>
+          <div class="orbit-ring orbit-ring--2">
+            <div class="orbit-icon" style="--i:0; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/postgresql/postgresql-original.svg" alt="PostgreSQL"></div>
+            <div class="orbit-icon" style="--i:1; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/redis/redis-original.svg" alt="Redis"></div>
+            <div class="orbit-icon" style="--i:2; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/docker/docker-original.svg" alt="Docker"></div>
+            <div class="orbit-icon" style="--i:3; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" alt="Node.js"></div>
+            <div class="orbit-icon" style="--i:4; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/python/python-original.svg" alt="Python"></div>
+            <div class="orbit-icon" style="--i:5; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/git/git-original.svg" alt="Git"></div>
+            <div class="orbit-icon" style="--i:6; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/amazonwebservices/amazonwebservices-plain-wordmark.svg" alt="AWS"></div>
+            <div class="orbit-icon" style="--i:7; --total:8"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/azure/azure-original.svg" alt="Azure"></div>
+          </div>
+          <div class="orbit-center">
+            <span>&lt;/&gt;</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ———— EXPERIENCE ———— -->
+    <section class="section experience" id="experience">
+      <h2 class="section__heading reveal">
+        <span class="section__number">03.</span> Where I've Worked
+      </h2>
+      <div class="timeline">
+        <div class="timeline__item reveal">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3>Team Leader & Full-Stack Developer</h3>
+              <span class="timeline__period">Jan 2025 — Present</span>
+            </div>
+            <h4 class="timeline__company">Decorative Plant System <span class="timeline__at">@ FPT University Capstone</span></h4>
+            <ul class="timeline__list">
+              <li>Led a team of 5 developers building an end-to-end smart plant care platform with IoT cultivation, e-commerce, and AI assistance</li>
+              <li>Designed Clean Architecture + CQRS (MediatR) backend with ASP.NET Core 10 and .NET Aspire orchestration</li>
+              <li>Implemented outbox pattern for reliable event delivery and cache-aside strategy with Redis prefix invalidation</li>
+              <li>Built real-time IoT automation rules with MQTT-driven rule engine and ESP32 firmware integration</li>
+              <li>Integrated AI surfaces for plant disease diagnosis, AR product recommendations, and scoped chat assistant</li>
+            </ul>
+            <div class="timeline__tags">
+              <span>ASP.NET Core</span><span>React</span><span>Flutter</span><span>.NET Aspire</span><span>PostgreSQL</span><span>Redis</span><span>MQTT</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3>Full-Stack Developer</h3>
+              <span class="timeline__period">Sep 2024 — Dec 2024</span>
+            </div>
+            <h4 class="timeline__company">Contest Buddy <span class="timeline__at">@ Team Project</span></h4>
+            <ul class="timeline__list">
+              <li>Built RESTful APIs with Node.js and Express.js for a competition management platform</li>
+              <li>Implemented real-time chat with Socket.IO, PayOS payment integration, and JWT authentication</li>
+              <li>Managed Cloudinary file storage, email notifications, and containerized deployment with Docker</li>
+            </ul>
+            <div class="timeline__tags">
+              <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.IO</span><span>Docker</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="timeline__item reveal">
+          <div class="timeline__marker"></div>
+          <div class="timeline__content">
+            <div class="timeline__header">
+              <h3>Frontend Developer</h3>
+              <span class="timeline__period">May 2024 — Aug 2024</span>
+            </div>
+            <h4 class="timeline__company">E-Commerce Projects <span class="timeline__at">@ FPT University</span></h4>
+            <ul class="timeline__list">
+              <li>Developed responsive e-commerce platforms using React.js with Tailwind CSS</li>
+              <li>Built salon booking system with Node.js and PostgreSQL backend</li>
+              <li>Implemented product catalogs, shopping carts, and user authentication flows</li>
+            </ul>
+            <div class="timeline__tags">
+              <span>React</span><span>Tailwind</span><span>Node.js</span><span>PostgreSQL</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ———— PROJECTS ———— -->
+    <section class="section projects" id="projects">
+      <h2 class="section__heading reveal">
+        <span class="section__number">04.</span> Things I've Built
+      </h2>
+
+      <!-- Featured Project 1 -->
+      <div class="featured-project reveal">
+        <div class="featured-project__image-wrapper">
+          <img src="https://raw.githubusercontent.com/BuiMinhWin/Decorative-System/main/Decorative-Plant_React/public/screenshot.png" 
+               alt="Decorative Plant System Dashboard" 
+               class="featured-project__image"
+               onerror="this.src='data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 800 500%22><rect fill=%22%23112240%22 width=%22800%22 height=%22500%22/><text x=%22400%22 y=%22250%22 text-anchor=%22middle%22 fill=%22%2364ffda%22 font-family=%22monospace%22 font-size=%2224%22>🌱 Decorative Plant System</text></svg>'">
+          <div class="featured-project__image-overlay"></div>
+        </div>
+        <div class="featured-project__info">
+          <span class="featured-project__label">⭐ Featured Project</span>
+          <h3 class="featured-project__title">Decorative Plant System</h3>
+          <div class="featured-project__desc">
+            <p>An end-to-end <strong>smart plant care platform</strong> combining IoT cultivation, e-commerce, and AI-assisted plant assistance. Built as a monorepo with three coordinated applications sharing a single backend.</p>
+            <ul>
+              <li>Clean Architecture + CQRS with MediatR and outbox pattern</li>
+              <li>Real-time IoT automation with ESP32 sensors over MQTT</li>
+              <li>AI-powered plant disease diagnosis and AR placement</li>
+              <li>Multi-role platform: admin, branch manager, staff, customer</li>
+            </ul>
+          </div>
+          <div class="featured-project__tech">
+            <span>ASP.NET Core 10</span>
+            <span>React 18</span>
+            <span>Flutter 3</span>
+            <span>.NET Aspire</span>
+            <span>PostgreSQL</span>
+            <span>Redis</span>
+            <span>MQTT</span>
+            <span>Docker</span>
+          </div>
+          <div class="featured-project__links">
+            <a href="https://github.com/BuiMinhWin/Decorative-System" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </div>
+
+      <!-- Project Grid -->
+      <div class="projects__grid">
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__top">
+            <div class="project-card__folder"><i class="fa-regular fa-folder-open"></i></div>
+            <div class="project-card__links">
+              <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-card__title">Contest Buddy</h3>
+          <p class="project-card__desc">A comprehensive competition management platform connecting organizers, participants, and teams for tech contests and hackathons. Features real-time chat, payment integration, and containerized deployment.</p>
+          <div class="project-card__tech">
+            <span>Node.js</span><span>Express</span><span>MongoDB</span><span>Socket.IO</span><span>PayOS</span><span>Docker</span>
+          </div>
+          <span class="project-card__year">2025</span>
+        </article>
+
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__top">
+            <div class="project-card__folder"><i class="fa-regular fa-folder-open"></i></div>
+            <div class="project-card__links">
+              <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-card__title">HairSalon Booking</h3>
+          <p class="project-card__desc">Hair salon booking system with service management, appointment scheduling, and staff management. Full CRUD operations with role-based access control.</p>
+          <div class="project-card__tech">
+            <span>Node.js</span><span>PostgreSQL</span><span>Express</span><span>REST API</span>
+          </div>
+          <span class="project-card__year">2024</span>
+        </article>
+
+        <article class="project-card reveal" data-tilt>
+          <div class="project-card__top">
+            <div class="project-card__folder"><i class="fa-regular fa-folder-open"></i></div>
+            <div class="project-card__links">
+              <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" aria-label="GitHub"><i class="fa-brands fa-github"></i></a>
+            </div>
+          </div>
+          <h3 class="project-card__title">E-Commerce Milk Platform</h3>
+          <p class="project-card__desc">Full-featured e-commerce platform for milk products with product catalog, shopping cart, user authentication, order management, and responsive design.</p>
+          <div class="project-card__tech">
+            <span>React.js</span><span>Tailwind CSS</span><span>REST API</span><span>Vite</span>
+          </div>
+          <span class="project-card__year">2024</span>
+        </article>
+      </div>
+    </section>
+
+    <!-- ———— CONTACT ———— -->
+    <section class="section contact" id="contact">
+      <h2 class="section__heading reveal">
+        <span class="section__number">05.</span> Get In Touch
+      </h2>
+      <div class="contact__content reveal">
+        <p class="contact__intro">
+          I'm currently looking for new opportunities. Whether you have a question, a project idea, or just want to say hi — my inbox is always open. I'll try my best to get back to you!
+        </p>
+        <form class="contact__form" id="contact-form" action="https://formsubmit.co/buiminhthang.dev@gmail.com" method="POST">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_template" value="table">
+          <div class="contact__form-group">
+            <div class="contact__input-wrapper">
+              <input type="text" id="contact-name" name="name" required placeholder=" ">
+              <label for="contact-name">Your Name</label>
+              <div class="contact__input-line"></div>
+            </div>
+            <div class="contact__input-wrapper">
+              <input type="email" id="contact-email" name="email" required placeholder=" ">
+              <label for="contact-email">Your Email</label>
+              <div class="contact__input-line"></div>
+            </div>
+          </div>
+          <div class="contact__input-wrapper">
+            <textarea id="contact-message" name="message" rows="5" required placeholder=" "></textarea>
+            <label for="contact-message">Your Message</label>
+            <div class="contact__input-line"></div>
+          </div>
+          <button type="submit" class="btn btn--primary btn--submit">
+            <i class="fa-solid fa-paper-plane"></i> Send Message
+          </button>
+        </form>
+
+        <div class="contact__alt">
+          <p>Or reach me directly:</p>
+          <div class="contact__channels">
+            <a href="mailto:buiminhthang.dev@gmail.com" class="contact__channel">
+              <i class="fa-solid fa-envelope"></i>
+              <span>buiminhthang.dev@gmail.com</span>
+            </a>
+            <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener" class="contact__channel">
+              <i class="fa-brands fa-github"></i>
+              <span>BuiMinhWin</span>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="footer__inner">
+      <p class="footer__credit">
+        Designed & Built by <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener">Bùi Minh Thắng</a>
+      </p>
+      <div class="footer__social-mobile">
+        <a href="https://github.com/BuiMinhWin" target="_blank" rel="noopener"><i class="fa-brands fa-github"></i></a>
+        <a href="https://linkedin.com" target="_blank" rel="noopener"><i class="fa-brands fa-linkedin-in"></i></a>
+        <a href="https://facebook.com" target="_blank" rel="noopener"><i class="fa-brands fa-facebook-f"></i></a>
+      </div>
+      <p class="footer__tech">Built with HTML, CSS & JavaScript</p>
+    </div>
+  </footer>
+
+  <!-- ===== BACK TO TOP ===== -->
+  <button class="back-to-top" id="back-to-top" aria-label="Back to top">
+    <i class="fa-solid fa-arrow-up"></i>
+  </button>
+
+  <script src="script.js"></script>
+</body>
+</html>
