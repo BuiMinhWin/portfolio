@@ -8,11 +8,11 @@ document.addEventListener('DOMContentLoaded', () => {
   // ===== TYPEWRITER EFFECT =====
   const typewriterEl = document.getElementById('typewriter');
   const roles = [
-    'Full-Stack Developer',
-    'ASP.NET Core Engineer',
-    'React & Flutter Builder',
+    'Backend Engineer',
+    '.NET Core Specialist',
     'IoT Enthusiast',
-    'Team Leader',
+    'Fullstack Developer',
+    'Problem Solver',
   ];
   let roleIndex = 0;
   let charIndex = 0;
