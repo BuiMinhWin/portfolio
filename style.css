@@ -1431,6 +1431,18 @@ body.cursor-hover .cursor-ring {
   cursor: none;
 }
 
+/* Fix browser autofill overriding dark theme */
+.contact__input-wrapper input:-webkit-autofill,
+.contact__input-wrapper input:-webkit-autofill:hover,
+.contact__input-wrapper input:-webkit-autofill:focus,
+.contact__input-wrapper textarea:-webkit-autofill {
+  -webkit-box-shadow: 0 0 0 1000px var(--bg-primary) inset !important;
+  -webkit-text-fill-color: var(--text-primary) !important;
+  font-family: var(--font-body) !important;
+  caret-color: var(--accent);
+  transition: background-color 5000s ease-in-out 0s;
+}
+
 .contact__input-wrapper textarea {
   resize: vertical;
   min-height: 120px;
