@@ -434,10 +434,21 @@
             <label for="contact-message">Your Message</label>
             <div class="contact__input-line"></div>
           </div>
-          <button type="submit" class="btn btn--primary btn--submit">
-            <i class="fa-solid fa-paper-plane"></i> Send Message
+          <button type="submit" class="btn btn--primary btn--submit" id="submit-btn">
+            <span class="btn-text"><i class="fa-solid fa-paper-plane"></i> Send Message</span>
+            <span class="btn-loader" style="display: none;"><i class="fa-solid fa-circle-notch fa-spin"></i></span>
           </button>
         </form>
+
+        <!-- Success Popup -->
+        <div id="success-popup" class="popup">
+          <div class="popup__content">
+            <div class="popup__icon">😸</div>
+            <h3 class="popup__title">Message Sent!</h3>
+            <p class="popup__text">Thanks for reaching out! I'll get back to you as soon as possible.</p>
+            <button class="popup__close" id="popup-close">Awesome!</button>
+          </div>
+        </div>
 
         <div class="contact__alt">
           <p>Or reach me directly:</p>

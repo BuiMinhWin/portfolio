@@ -347,3 +347,68 @@ document.addEventListener('DOMContentLoaded', () => {
   }
 
 });
+
+// ===== FORM SUBMISSION (AJAX) =====
+const contactForm = document.getElementById('contact-form');
+const submitBtn = document.getElementById('submit-btn');
+const btnText = submitBtn.querySelector('.btn-text');
+const btnLoader = submitBtn.querySelector('.btn-loader');
+const popup = document.getElementById('success-popup');
+const popupClose = document.getElementById('popup-close');
+
+if (contactForm) {
+  contactForm.addEventListener('submit', function(e) {
+    e.preventDefault();
+    
+    // Show loading state
+    submitBtn.disabled = true;
+    btnText.style.opacity = '0.7';
+    btnLoader.style.display = 'inline-block';
+
+    // Get form data
+    const formData = new FormData(contactForm);
+
+    // Send via AJAX
+    fetch('https://formsubmit.co/ajax/37e18ffb67634e4929c3fdc24bf7098c', {
+      method: 'POST',
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    })
+    .then(response => response.json())
+    .then(data => {
+      // Hide loading state
+      submitBtn.disabled = false;
+      btnText.style.opacity = '1';
+      btnLoader.style.display = 'none';
+      
+      // Reset form
+      contactForm.reset();
+      
+      // Show popup
+      popup.classList.add('active');
+    })
+    .catch(error => {
+      console.error('Error submitting form:', error);
+      submitBtn.disabled = false;
+      btnText.style.opacity = '1';
+      btnLoader.style.display = 'none';
+      alert("Oops! Something went wrong. Please try again or email me directly.");
+    });
+  });
+}
+
+// Close popup
+if (popupClose && popup) {
+  popupClose.addEventListener('click', () => {
+    popup.classList.remove('active');
+  });
+  
+  // Close on outside click
+  popup.addEventListener('click', (e) => {
+    if (e.target === popup) {
+      popup.classList.remove('active');
+    }
+  });
+}
